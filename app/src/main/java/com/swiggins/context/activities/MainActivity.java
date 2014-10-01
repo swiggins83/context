@@ -43,7 +43,7 @@ public class MainActivity extends Activity
                 commitFragment(new NotesFragment());
                 break;
             case 2:
-                //commitFragment(new CreateNotesFragment());
+                //commitFragment(new CreateNotesActivity());
                 break;
             default:
                 commitFragment(new NotesFragment());

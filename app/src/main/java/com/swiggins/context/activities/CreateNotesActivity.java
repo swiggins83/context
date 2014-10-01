@@ -1,36 +1,36 @@
-package com.swiggins.context.fragments;
+package com.swiggins.context.activities;
 
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.app.Fragment;
-import android.content.Intent;
 import android.graphics.Outline;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.swiggins.context.R;
-import com.swiggins.context.activities.CreateNotesActivity;
-import com.swiggins.context.activities.MainActivity;
 
-public class NotesFragment extends Fragment {
+public class CreateNotesActivity extends Activity {
 
-    public NotesFragment() {
+    public CreateNotesActivity() {
 
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_notes, container, false);
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_create_notes);
 
-        View addButton = v.findViewById(R.id.add_button);
-        setUpFab(addButton);
+        View saveButton = findViewById(R.id.add_button);
+        setUpFab(saveButton);
 
-        return v;
+        ActionBar actionBar = getActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
     }
 
     private void setUpFab(View addButton) {
@@ -42,14 +42,13 @@ public class NotesFragment extends Fragment {
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                addNote();
+                saveNote();
             }
         });
     }
 
-    private void addNote() {
-        Intent intent = new Intent(getActivity(), CreateNotesActivity.class);
-        startActivity(intent);
+    private void saveNote() {
+        Toast.makeText(this, ((EditText) findViewById(R.id.note_content)).getText().toString(), Toast.LENGTH_LONG).show();
     }
 
 }
