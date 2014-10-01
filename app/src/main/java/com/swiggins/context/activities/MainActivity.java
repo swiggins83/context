@@ -14,26 +14,27 @@ import com.swiggins.context.R;
 import com.swiggins.context.fragments.NavigationDrawerFragment;
 import com.swiggins.context.fragments.NotesFragment;
 
+import org.androidannotations.annotations.EActivity;
+import org.androidannotations.annotations.EFragment;
+import org.androidannotations.annotations.FragmentById;
+import org.androidannotations.annotations.ViewById;
 
+@EActivity(R.layout.activity_main)
 public class MainActivity extends Activity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
 
-    private NavigationDrawerFragment mNavigationDrawerFragment;
+    @FragmentById(R.id.navigation_drawer)
+    public NavigationDrawerFragment mNavigationDrawerFragment;
 
     private CharSequence mTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getFragmentManager().findFragmentById(R.id.navigation_drawer);
         mTitle = getTitle();
-
-        mNavigationDrawerFragment.setUp(
-                R.id.navigation_drawer,
-                (DrawerLayout) findViewById(R.id.drawer_layout));
     }
 
     @Override
@@ -43,7 +44,7 @@ public class MainActivity extends Activity
                 commitFragment(new NotesFragment());
                 break;
             case 2:
-                //commitFragment(new CreateNotesFragment());
+                //commitFragment(new CreateNotesActivity());
                 break;
             default:
                 commitFragment(new NotesFragment());
