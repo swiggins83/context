@@ -19,18 +19,18 @@
         android:layout_alignParentEnd="true" />
 
     <ImageButton
-        android:id="@+id/add_button"
-        android:layout_width="@dimen/diameter"
-        android:layout_height="@dimen/diameter"
-        android:layout_gravity="end|bottom"
+        android:id="@+id/save_fab"
+        android:src="@*android:drawable/ic_checkmark_holo_light"
+        android:background="@drawable/ripple"
+        android:tint="@android:color/white"
+        android:stateListAnimator="@anim/button_elevation"
+        android:elevation="@dimen/elevation_high"
+        android:layout_width="@dimen/fab_diameter"
+        android:layout_height="@dimen/fab_diameter"
+        android:layout_gravity="right|bottom"
         android:layout_marginBottom="@dimen/add_button_margin"
         android:layout_marginEnd="@dimen/add_button_margin"
-        android:tint="@android:color/white"
-        android:background="@drawable/oval_ripple"
-        android:elevation="@dimen/elevation_low"
-        android:src="@*android:drawable/ic_checkmark_holo_light"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        tools:ignore="PrivateResource" />
+        android:layout_alignParentRight="true" />
 
 </RelativeLayout>

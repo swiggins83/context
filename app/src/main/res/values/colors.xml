@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- deep orange primaries -->
+    <color name="primaryColor">#ff5722</color>
+    <color name="primaryColorLight">#fbe9e7</color>
+    <color name="primaryColorDark">#e64a19</color>
+
+    <!-- cyan accents -->
+    <color name="accentColor">#00bcd4</color>
+    <color name="accentColorLight">#e0f7fa</color>
+    <color name="accentColorDark">#0097a7</color>
+</resources>

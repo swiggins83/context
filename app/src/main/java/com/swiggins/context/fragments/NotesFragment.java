@@ -1,20 +1,17 @@
 package com.swiggins.context.fragments;
 
-
-import android.app.Activity;
 import android.app.Fragment;
 import android.content.Intent;
-import android.graphics.Outline;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
+import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.swiggins.context.R;
 import com.swiggins.context.activities.CreateNotesActivity;
-import com.swiggins.context.activities.MainActivity;
 
 public class NotesFragment extends Fragment {
 
@@ -27,24 +24,15 @@ public class NotesFragment extends Fragment {
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_notes, container, false);
 
-        View addButton = v.findViewById(R.id.add_button);
-        setUpFab(addButton);
-
-        return v;
-    }
-
-    private void setUpFab(View addButton) {
-        int diameter = getResources().getDimensionPixelSize(R.dimen.diameter);
-        Outline outline = new Outline();
-        outline.setOval(0, 0, diameter, diameter);
-        addButton.setOutline(outline);
-        addButton.setClipToOutline(true);
-        addButton.setOnClickListener(new View.OnClickListener() {
+        ImageButton fab = (ImageButton) v.findViewById(R.id.add_fab);
+        fab.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                 addNote();
             }
         });
+
+        return v;
     }
 
     private void addNote() {
