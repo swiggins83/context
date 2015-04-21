@@ -7,6 +7,7 @@ import android.widget.Toast;
 import com.swiggins.context.adapters.ObjectiveListAdapter;
 import com.swiggins.context.models.Objective;
 import com.swiggins.context.utils.ObjectiveManager;
+import com.wdullaer.swipeactionadapter.SwipeActionAdapter;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Bean;
@@ -45,11 +46,15 @@ public class MainActivity extends Activity {
                 new Objective.Builder()
                         .setTitle("TITLE")
                         .setDescription("PPOOOP")
-                        .setImage(getDrawable(android.R.drawable.ic_menu_report_image))
                         .build());
 
-        listView.setAdapter(new ObjectiveListAdapter(this,
-                R.layout.objective_cell, objectives));
+        ObjectiveListAdapter adapter = new ObjectiveListAdapter(
+                this,
+                listView,
+                R.layout.objective_cell,
+                objectives);
+
+        listView.setAdapter(adapter);
 
     }
 
