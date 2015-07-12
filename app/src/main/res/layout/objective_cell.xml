@@ -9,7 +9,7 @@
 
     <RelativeLayout
         android:id="@+id/done_layout"
-        android:background="#321321"
+        android:background="@drawable/done_background"
         android:minHeight="72dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -17,7 +17,10 @@
 
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:src="@android:drawable/ic_delete" />
 
     </RelativeLayout>
 
@@ -25,7 +28,7 @@
 
     <RelativeLayout
         android:id="@+id/snooze_layout"
-        android:background="#123123"
+        android:background="@drawable/snooze_background"
         android:minHeight="72dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -33,7 +36,10 @@
 
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@android:drawable/ic_dialog_alert" />
 
     </RelativeLayout>
 
@@ -44,7 +50,7 @@
         android:orientation="vertical"
         android:minHeight="72dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:background="@android:color/background_light"
         android:padding="16dp" >
 
@@ -83,6 +89,7 @@
 
             </LinearLayout>
 
+            <!--
             <CheckBox
                 android:id="@+id/objective_completed"
                 android:layout_width="wrap_content"
@@ -90,6 +97,7 @@
                 android:layout_alignParentRight="true"
                 android:paddingRight="@dimen/activity_horizontal_margin"
                 android:layout_centerInParent="true" />
+            -->
 
         </RelativeLayout>
 

@@ -48,6 +48,24 @@ public class MainActivity extends Activity {
                         .setDescription("PPOOOP")
                         .build());
 
+        objectives.add(
+                new Objective.Builder()
+                        .setTitle("LOREM")
+                        .setDescription("IPSUM")
+                        .build());
+
+        objectives.add(
+                new Objective.Builder()
+                        .setTitle("HEYEYEYEYYE")
+                        .setDescription("kjlawhklakwhlakj")
+                        .build());
+
+        objectives.add(
+                new Objective.Builder()
+                        .setTitle("stuff")
+                        .setDescription("helkhelkehlekjlekhlekheljk")
+                        .build());
+
         ObjectiveListAdapter adapter = new ObjectiveListAdapter(
                 this,
                 listView,
